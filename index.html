@@ -2,12 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netflix</title>
+    <title>Training Room</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      .box {
+        padding: 100px 0;
+        width: 400px;
+        text-align: center;
+        background: #ddd;
+        margin: 20px;
+        display: inline-block;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <!-- FIRSSST LESSOON -->
 
-    <script src="app.js"></script>
+      <div v-if="showBooks">
+        <ul>
+          <li v-for="book in books">
+            <img src="" :alt="book.title" />
+            <h3>{{ book.title }}</h3>
+            <p>{{ book.author }}</p>
+          </li>
+        </ul>
+      </div>
+      <!-- <button v-on:click="age++">Increase age</button>
+      <button v-on:click="age--">Decrease age</button>
+      <button @click="changeTitle">Here</button>
+      <button @click="toggleShowBooks">
+        <span v-if="showBooks">Hide Books</span>
+        <span v-if="!showBooks">Show Books</span>
+      </button> -->
+
+      <!-- SECOND LESSOON -->
+      <br />
+      <!-- mouse events -->
+      <div class="box" @mouseover="handleEvent($event, 5)">
+        mouseove (enter)
+      </div>
+      <div class="box" @mouseleave="handleEvent">mouseleave</div>
+      <div class="box" @dblclick="handleEvent">double click</div>
+      <div class="box" @mousemove="handleMousemove">
+        position {{ x }} {{ y }}
+      </div>
+      <!-- THIRD LESSOON -->
+
+      <a :href="url">best website ever</a>
+    </div>
+    <!-- <script type="module" src="/src/main.js"></script> -->
+    <script src="/app.js"></script>
   </body>
 </html>
